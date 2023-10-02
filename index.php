@@ -1,17 +1,17 @@
 <?php
-class Movie{
-    public $title;
-    public $duration;
-    public $language;
+    //classe film
+    require_once __DIR__.'/Models/Movie.php';
 
-    function __construct($_title, $_duration, $_language){
-        $this->title = $_title;
-        $this->duration = $_duration;
-        $this->language = $_language;
-    }
-     static function pubblishMovie(){
-        return "LE CARATTERISTICHE DEL FILM:";
-    }
-};
+    //lista film
+    require_once __DIR__.'/Data/db.php';
+
+    echo Movie::pubblishMovie();
+    echo "<hr>";
+    $movies= [];
     
+    //ciclo per stampare i film della lista
+    foreach ($movies_list as $movie) {
+        $movies[] = new Movie($movie['title'], $movie['duration'], $movie['language']);      
+    };
+    var_dump($movies);
 ?>
