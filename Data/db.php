@@ -2,22 +2,42 @@
 //lista dei film
     $movies_list = [
         [
-            'title'=> "first title",
+            'published_year'=> 1997,
             'duration'=> 145,
-            'language'=> "english",
             'genre'=> ["thriller", "horror"],
         ],
         [
-            'title'=>"second title",
+            'published_year'=> 1986,
             'duration'=> 180,
-            'language'=> "english",
             'genre'=> ["SCI-FI", "action"],
         ],
         [
-            'title'=>"third title",
+            'published_year'=> 2010,
             'duration'=> 110,
-            'language'=> "italian",
             'genre'=> ["comedy"],
         ],
-    ]
+    ];
+//lista serie tv
+    $TvSeries_list = [
+        [
+            'episodes'=> 24,
+            'season'=> 3,
+            'genre'=> ["action", "adventure"],   
+        ],
+        [
+            'episodes'=> 63,
+            'season'=> 1,
+            'genre'=> ["crime"],   
+        ],
+        [
+            'episodes'=> 12,
+            'season'=> 7,
+            'genre'=> ["adventure", "fantasy"] ,  
+        ],
+        [
+            'episodes'=> 15,
+            'season'=> 6,
+            'genre'=> ["action", "comedy"],  
+        ],
+    ];
 ?>

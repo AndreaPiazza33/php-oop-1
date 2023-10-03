@@ -1,14 +1,12 @@
 <?php
-    class Movie{
-        public $title;
+    class MovieData{
+        public $published_year;
         public $duration;
-        public $language;
         public $genre;
 
-        public function __construct(string $title, int $duration, string $language, array $genre){
-            $this->title = $title;
+        public function __construct(int $published_year, int $duration, array $genre){
+            $this->published_year = $published_year;
             $this->duration = $duration;
-            $this->language = $language;
             $this->genre = $genre;
         }
         static function introMovie(){

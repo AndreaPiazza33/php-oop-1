@@ -2,13 +2,16 @@
     //classe film
     require_once __DIR__.'/Models/Movie.php';
 
-    //lista film
+    //classe serie tv
+    require_once __DIR__.'/Models/TvSeries.php';
+
+    //lista film e serie tv
     require_once __DIR__.'/Data/db.php';
 
-    //genere film
+    //genere film e serie tv
     require_once __DIR__.'/Models/Genre.php';
 
-    echo Movie::introMovie();
+    echo MovieData::introMovie();
     echo "<hr>";
     $movies= [];
     $genre= [];
@@ -21,7 +24,21 @@
             $genre[] = new Genre($genre_data);
         };
 
-        $movies[] = new Movie($movie['title'], $movie['duration'], $movie['language'], $genre);
+        $movies[] = new MovieData($movie['published_year'], $movie['duration'], $genre);
         var_dump($movie);      
+    };
+
+    echo TvSeriesData::introTvSeries();
+    echo "<hr>";
+    $TvSeries= [];
+
+    //ciclo per stampare le serie tv della lista
+    foreach ($TvSeries_list as $serie) {
+
+        foreach($serie['genre'] as $genre_data) {
+            $genre[] = new Genre($genre_data);
+        };
+        $TvSeries[] = new TvSeriesData($serie['episodes'], $serie['season'], $genre);
+        var_dump($serie);
     };
 ?>
